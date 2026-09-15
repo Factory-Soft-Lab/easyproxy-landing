@@ -13,17 +13,17 @@
 - id: pro.quarterly
   renews: true
   trial_days: 3
-  es: { name: Trimestral, period: Tres meses }
-  en: { name: Quarterly, period: Three months }
+  es: { name: "Trimestral", period: "Tres meses" }
+  en: { name: "Quarterly", period: "Three months" }
 
 - id: pro.yearly
   renews: true
   trial_days: 3
-  es: { name: Anual, period: Doce meses }
-  en: { name: Yearly, period: Twelve months }
+  es: { name: "Anual", period: "Doce meses" }
+  en: { name: "Yearly", period: "Twelve months" }
 
 - id: pro.lifetime
   renews: false
   trial_days: 0
-  es: { name: De por vida, period: Un pago, sin renovación }
-  en: { name: Lifetime, period: One payment, no renewal }
+  es: { name: "De por vida", period: "Un pago, sin renovación" }
+  en: { name: "Lifetime", period: "One payment, no renewal" }
