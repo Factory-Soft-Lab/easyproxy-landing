@@ -1,0 +1,114 @@
+---
+layout: default
+lang: es
+nav: home
+alternate: /en/
+description: EasyProxy enseña y modifica el tráfico de las apps de tu iPhone o tu Android, desde el propio teléfono. El tráfico no sale nunca del dispositivo.
+---
+{%- assign app = site.app.name -%}
+{%- assign pro = site.app.pro -%}
+{%- assign free = site.data.free_tier -%}
+  <div class="wrap">
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow">iPhone · iPad · Android</span>
+        <h1>El tráfico de tus apps, en el propio teléfono.</h1>
+        <p class="lede">
+          <span class="wordmark">{{ site.app.wordmark_lead }}<span class="accent">{{ site.app.wordmark_accent }}</span></span>
+          te enseña cada petición y cada respuesta de las apps que estás construyendo,
+          y te deja cambiarlas para probar. Sin ordenador al lado, sin configurar un
+          proxy a mano y sin mandar nada a ningún servidor.
+        </p>
+        <p class="pill"><span class="dot"></span>La VPN es local: el tráfico no sale del dispositivo</p>
+      </div>
+      <div class="hero-art">
+        <img src="{{ '/assets/icon.svg' | relative_url }}" alt="Icono de {{ app }}: cuatro filas de tráfico, una de ellas en rojo">
+      </div>
+    </section>
+
+    <h2>Qué hace</h2>
+    <ul class="cards">
+
+      <li class="card">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 6h11"/><path d="M8 12h12"/><path d="M4 18h8"/>
+        </svg>
+        <h3>Cada llamada, entera</h3>
+        <p>Método, URL, cabeceras, cuerpos y tiempos de todo lo que sale de tus apps, con JSON legible y búsqueda. Capturar no tiene límite.</p>
+      </li>
+
+      <li class="card">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/>
+        </svg>
+        <h3>HTTPS, sólo donde tú digas</h3>
+        <p>Un certificado generado en tu teléfono y una lista de dominios. Lo que no está en la lista pasa sin abrir.</p>
+      </li>
+
+      <li class="card">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10z"/><path d="M13.5 7.5l3 3"/>
+        </svg>
+        <h3>Cambia la respuesta</h3>
+        <p>Reescribe un campo del JSON, pausa una petición para editarla, bloquea un dominio o sirve una respuesta falsa sin tocar el servidor.</p>
+      </li>
+
+      <li class="card">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="0.75"/>
+        </svg>
+        <h3>Una red peor, a propósito</h3>
+        <p>Retardo y ancho de banda limitado para las peticiones que elijas, para ver cómo se comporta tu app en el metro antes de que lo cuente una reseña.</p>
+      </li>
+
+      <li class="card">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 7l-5 5 5 5"/><path d="M15 7l5 5-5 5"/>
+        </svg>
+        <h3>Scripting</h3>
+        <p>Tu propio código sobre cada petición y cada respuesta, para lo que no cabe en una regla. Incluido en {{ pro }}.</p>
+      </li>
+
+      <li class="card">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 15V3"/><path d="M8 7l4-4 4 4"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/>
+        </svg>
+        <h3>Llévatelo a donde trabajas</h3>
+        <p>Exporta a HAR, copia una petición como cURL o comparte un flujo de mocks con tu equipo.</p>
+      </li>
+
+    </ul>
+
+    <section class="claim">
+      <h2>Lo que sale del teléfono y lo que no</h2>
+      <p>
+        <strong>El tráfico que capturas no sale nunca del dispositivo.</strong> No hay
+        cuentas, no hay servidor nuestro y la app no lleva analítica ni publicidad. La
+        clave del certificado se genera y se queda en tu teléfono.
+      </p>
+      <p>
+        Sale lo que tú decides sacar —un HAR que exportas, una petición que reenvías— y,
+        si la lanzas, la prueba de velocidad contra Cloudflare.
+      </p>
+      <p class="meta">
+        Está contado con detalle, sin letra pequeña, en la
+        <a href="{{ '/privacidad.html' | relative_url }}">política de privacidad</a>.
+      </p>
+    </section>
+
+    <h2>Gratis para trabajar, {{ pro }} para el volumen</h2>
+    <p>
+      Capturar, el inspector y exportar a HAR no tienen límite y no lo van a tener. Sin
+      pagar se aplican las {{ free.rules_per_tool }} primeras reglas de cada herramienta
+      y se descifran {{ free.ssl_domains }} dominios. {{ pro }} quita los topes y suma
+      {{ free.pro_only_tools }}:
+    </p>
+    {% include plans.html lang="es" %}
+    <p class="meta">
+      El precio lo fija la tienda para tu país y lo ves en la app antes de pagar. Las
+      condiciones de la prueba y la renovación están en los
+      <a href="{{ '/terminos.html#prueba' | relative_url }}">términos</a>.
+    </p>
+
+  </div>

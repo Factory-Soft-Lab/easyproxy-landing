@@ -1,0 +1,29 @@
+# Los planes de Pro, en el mismo orden y con los mismos identificadores que en
+# las dos apps:
+#   iOS      App/Services/StoreKitEntitlement.swift  (pro.quarterly, pro.yearly, pro.lifetime)
+#   Android  app/…/features/pro/PlayStore.kt         (SUBSCRIPTIONS + ONE_TIME)
+#
+# Los nombres son los del catálogo de la app (pro.quarterly, pro.period.quarterly…),
+# para que la web y la pantalla de compra digan lo mismo. Los precios NO van
+# aquí: los fija cada tienda por país y la app los enseña antes de pagar.
+#
+# `trial_days` es la prueba gratis que se configura en App Store Connect y en
+# Play Console. Si allí cambia, cambia aquí.
+
+- id: pro.quarterly
+  renews: true
+  trial_days: 3
+  es: { name: Trimestral, period: Tres meses }
+  en: { name: Quarterly, period: Three months }
+
+- id: pro.yearly
+  renews: true
+  trial_days: 3
+  es: { name: Anual, period: Doce meses }
+  en: { name: Yearly, period: Twelve months }
+
+- id: pro.lifetime
+  renews: false
+  trial_days: 0
+  es: { name: De por vida, period: Un pago, sin renovación }
+  en: { name: Lifetime, period: One payment, no renewal }

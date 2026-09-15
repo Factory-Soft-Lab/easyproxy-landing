@@ -1,0 +1,11 @@
+# Lo que entra gratis. Copia a mano de `FreeTier` en las dos apps:
+#   iOS      Packages/EasyProxyDomain/Sources/EasyProxyDomain/Entitlement.swift
+#   Android  domain/src/main/kotlin/app/easyproxy/domain/pro/Entitlement.kt
+# Si allí cambia un número, aquí también: la web lo promete por escrito.
+
+rules_per_tool: 2
+ssl_domains: 5
+mock_flows: 1
+counter_conditions: 1
+pro_only_tools: Scripting
+trial_days: 3

@@ -1,0 +1,145 @@
+---
+layout: default
+lang: es
+nav: support
+alternate: /en/support.html
+title: Soporte
+description: Ayuda con EasyProxy. Certificado, apps que no cargan con la captura encendida, Pro, prueba gratis y cancelación.
+---
+{%- assign app = site.app.name -%}
+{%- assign pro = site.app.pro -%}
+{%- assign co = site.company -%}
+{%- assign free = site.data.free_tier -%}
+  <div class="wrap doc">
+
+    <span class="eyebrow">Ayuda <span class="code">· soporte</span></span>
+    <h1>¿Algo no funciona? Escríbenos.</h1>
+    <p class="lede">
+      Detrás de {{ app }} hay un equipo pequeño que lee todos los correos. Respondemos
+      en <strong>máximo 5 días hábiles</strong>, normalmente antes.
+    </p>
+
+    <p class="mail"><a href="mailto:{{ co.email }}">{{ co.email }}</a></p>
+
+    <h2>Para que podamos ayudarte más rápido</h2>
+    <p>Si nos cuentas un problema, incluye lo que sepas de esto:</p>
+    <ul>
+      <li>Modelo del dispositivo y versión del sistema (iOS o Android).</li>
+      <li>Versión de la app: está en <strong>Más → Acerca de</strong>.</li>
+      <li>Qué hiciste, qué esperabas y qué pasó en su lugar.</li>
+      <li>Si la app se cerró sola, el informe de <strong>Más → Diagnóstico</strong>: lo puedes compartir desde ahí.</li>
+    </ul>
+    <p class="note">
+      <strong>No nos mandes tráfico capturado sin revisarlo.</strong> Un HAR o una
+      petición copiada pueden llevar tokens, cookies o contraseñas de tus apps. Si hace
+      falta, recorta o tacha esos valores antes. Nunca te vamos a pedir una contraseña.
+    </p>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+
+      <details>
+        <summary>¿Por qué {{ app }} necesita una VPN?</summary>
+        <p>
+          Porque es la única forma que dan iOS y Android para que una app vea el tráfico
+          de las demás. Es una VPN local: el tráfico no pasa por ningún servidor nuestro,
+          sigue directo hacia donde iba. Está explicado en la
+          <a href="{{ '/privacidad.html#vpn' | relative_url }}">política de privacidad</a>.
+        </p>
+      </details>
+
+      <details>
+        <summary>Veo las peticiones pero no el contenido de las HTTPS.</summary>
+        <p>
+          Para leer HTTPS hacen falta dos cosas: instalar el certificado de la app y
+          confiar en él, y añadir el dominio en <strong>Más → SSL Proxying</strong>. Sólo se
+          descifra lo que está en esa lista; sin {{ pro }}, hasta {{ free.ssl_domains }}
+          dominios.
+        </p>
+      </details>
+
+      <details>
+        <summary>Una app deja de cargar cuando enciendo la captura.</summary>
+        <p>
+          Casi siempre es una app que no acepta certificados instalados por el usuario
+          (<em>certificate pinning</em>) y se niega a conectar cuando se descifra su
+          tráfico. Quita su dominio de SSL Proxying: la verás igual, sin el contenido. En
+          Android, además, la mayoría de apps de terceros no confía en certificados de
+          usuario desde Android 7; las tuyas pueden hacerlo con su
+          <code>network_security_config</code>.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cómo quito el certificado?</summary>
+        <p>
+          Desinstalar la app no lo quita. En iPhone: <em>Ajustes → General → VPN y gestión
+          de dispositivos → {{ app }} → Eliminar perfil</em>. En Android: <em>Ajustes →
+          Seguridad y privacidad → Más ajustes de seguridad → Cifrado y credenciales →
+          Credenciales de confianza → Usuario</em>. El nombre de los menús puede variar
+          según el fabricante.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Qué incluye la versión gratuita?</summary>
+        <p>
+          Capturar, el inspector y exportar a HAR, sin límite. Sin {{ pro }} se aplican
+          las {{ free.rules_per_tool }} primeras reglas de cada herramienta, se descifran
+          {{ free.ssl_domains }} dominios y {{ free.pro_only_tools }} queda fuera. El
+          detalle está en los <a href="{{ '/terminos.html#gratis' | relative_url }}">términos</a>.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cómo funciona la prueba gratis?</summary>
+        <p>
+          Los planes que se renuevan pueden empezar con {{ free.trial_days }} días gratis,
+          una vez por cuenta de tienda. Si no cancelas antes de que acabe —en el App
+          Store, al menos 24 horas antes—, pasa a pago por el plan que elegiste. Si
+          cancelas durante la prueba, no se te cobra nada y conservas Pro hasta el final
+          de esos días.
+        </p>
+      </details>
+
+      <details>
+        <summary>Compré Pro y no aparece.</summary>
+        <p>
+          Usa <strong>Restaurar compras</strong> en la pantalla de Pro, con la misma cuenta
+          de App Store o Google Play con la que compraste. Si sigue sin aparecer,
+          escríbenos indicando la tienda y la fecha de la compra.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cómo cancelo la suscripción?</summary>
+        <p>
+          Desde tu cuenta de tienda: en iPhone, <em>Ajustes → tu nombre →
+          Suscripciones</em>; en Android, <em>Google Play → Pagos y suscripciones →
+          Suscripciones</em>. Desinstalar la app no la cancela. Conservas Pro hasta el
+          final del periodo pagado.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cómo pido un reembolso?</summary>
+        <p>
+          Lo gestiona la tienda: Apple en
+          <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>
+          y Google desde el historial de pedidos de Google Play. Nosotros no podemos
+          emitirlos, pero escríbenos y te ayudamos.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cómo borro todo lo capturado?</summary>
+        <p>
+          En <strong>Ajustes → Borrar lo capturado</strong>, o desinstalando la app. Como no
+          hay cuenta ni servidor, con eso desaparece todo. El certificado se quita
+          aparte (ver arriba).
+        </p>
+      </details>
+
+    </div>
+
+  </div>

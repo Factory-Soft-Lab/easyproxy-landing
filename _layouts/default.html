@@ -1,0 +1,66 @@
+{%- comment -%}
+  La cáscara de todas las páginas: cabecera, barra, pie.
+  Cada página dice en su cabecera `lang` (es|en), `nav` (qué pestaña marca),
+  `alternate` (la misma página en el otro idioma) y `title`/`description`.
+{%- endcomment -%}
+{%- assign t = site.data.nav[page.lang] -%}
+<!doctype html>
+<html lang="{{ page.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.app.name }}</title>
+<meta name="description" content="{{ page.description }}">
+<meta name="theme-color" content="#0a0b0e">
+<link rel="icon" href="{{ '/assets/icon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
+{%- unless page.noindex %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url | absolute_url }}">
+{%- if page.alternate %}
+<link rel="alternate" hreflang="{% if page.lang == 'es' %}en{% else %}es{% endif %}" href="{{ page.alternate | absolute_url }}">
+{%- endif %}
+{%- else %}
+<meta name="robots" content="noindex">
+{%- endunless %}
+<meta property="og:title" content="{% if page.title %}{{ page.title }} — {% endif %}{{ site.app.name }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:type" content="website">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="{{ t.home.path | relative_url }}"><img src="{{ '/assets/icon.svg' | relative_url }}" alt="">{{ site.app.name }}</a>
+    <nav>
+      <a href="{{ t.privacy.path | relative_url }}"{% if page.nav == 'privacy' %} aria-current="page"{% endif %}>{{ t.privacy.label }}</a>
+      <a href="{{ t.terms.path | relative_url }}"{% if page.nav == 'terms' %} aria-current="page"{% endif %}>{{ t.terms.label }}</a>
+      <a href="{{ t.support.path | relative_url }}"{% if page.nav == 'support' %} aria-current="page"{% endif %}>{{ t.support.label }}</a>
+      {%- if page.alternate %}
+      <a class="lang" href="{{ page.alternate | relative_url }}" hreflang="{% if page.lang == 'es' %}en{% else %}es{% endif %}">{{ t.switch }}</a>
+      {%- endif %}
+    </nav>
+  </div>
+</header>
+
+<main>
+{{ content }}
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© {{ site.company.year }} {{ site.company.name }} · {{ site.company.country }}</span>
+    <nav>
+      {%- unless page.nav == 'home' %}
+      <a href="{{ t.home.path | relative_url }}">{{ t.home.label }}</a>
+      {%- endunless %}
+      <a href="{{ t.privacy.path | relative_url }}">{{ t.privacy.label }}</a>
+      <a href="{{ t.terms.path | relative_url }}">{{ t.terms.label }}</a>
+      <a href="{{ t.support.path | relative_url }}">{{ t.support.label }}</a>
+      <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

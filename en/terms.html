@@ -1,0 +1,356 @@
+---
+layout: default
+lang: en
+nav: terms
+alternate: /terminos.html
+title: Terms of Use
+description: Terms of use for EasyProxy, the tool for inspecting your apps' traffic. License, permitted use, Pro, free trial, renewal and governing law.
+---
+{%- assign app = site.app.name -%}
+{%- assign pro = site.app.pro -%}
+{%- assign co = site.company -%}
+{%- assign free = site.data.free_tier -%}
+{%- assign quarterly = site.data.plans[0] -%}
+{%- assign yearly = site.data.plans[1] -%}
+{%- assign lifetime = site.data.plans[2] -%}
+  <div class="wrap doc">
+
+    <span class="eyebrow">Legal <span class="code">· EULA</span></span>
+    <h1>Terms of Use</h1>
+    <p class="meta">
+      Effective {{ site.legal.effective_en }} · Apply to the {{ app }} app for iOS,
+      iPadOS and Android, and to {{ pro }}.
+    </p>
+
+    <p class="lede">
+      This agreement is between you and {{ co.name }}. By installing or using {{ app }}
+      you accept what follows; if you do not agree, do not use it and uninstall it.
+    </p>
+
+    <p class="meta">
+      This is a translation. If it differs from the
+      <a href="{{ '/terminos.html' | relative_url }}">Spanish version</a>, the Spanish
+      version prevails, except where the law of your country says otherwise.
+    </p>
+
+    <nav class="toc" aria-label="Contents">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#who">Who we are</a></li>
+        <li><a href="#what">What {{ app }} is</a></li>
+        <li><a href="#permitted">Which traffic you may use it on</a></li>
+        <li><a href="#certificate">The VPN and the certificate</a></li>
+        <li><a href="#license">License</a></li>
+        <li><a href="#prohibited">What you may not do</a></li>
+        <li><a href="#free">Free version</a></li>
+        <li><a href="#pro">{{ pro }}</a></li>
+        <li><a href="#trial">Free trial</a></li>
+        <li><a href="#renewal">Renewal and cancellation</a></li>
+        <li><a href="#refunds">Refunds</a></li>
+        <li><a href="#apple">If you got it from the App Store</a></li>
+        <li><a href="#google">If you got it from Google Play</a></li>
+        <li><a href="#warranty">Warranty</a></li>
+        <li><a href="#liability">Liability</a></li>
+        <li><a href="#ip">Intellectual property</a></li>
+        <li><a href="#termination">Termination</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#law">Governing law</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <section id="who">
+      <h2>1. Who we are</h2>
+      <p>
+        {{ app }} is developed and distributed by <strong>{{ co.name }}</strong>, a company
+        based in {{ co.country }} ("we"). You can write to us at
+        <a href="mailto:{{ co.email }}">{{ co.email }}</a>.
+      </p>
+    </section>
+
+    <section id="what">
+      <h2>2. What {{ app }} is</h2>
+      <p>
+        {{ app }} is a <strong>development and debugging tool</strong>: it shows the network
+        traffic of the apps on your own device —requests, responses, headers, bodies,
+        timings— and lets you change it to test what you build: rewrite responses, pause
+        requests, simulate a slow network or serve fake responses.
+      </p>
+      <p>In particular, the app is <strong>not</strong>:</p>
+      <ul>
+        <li>a privacy or anonymity VPN: it does not hide your IP or encrypt your connection from third parties;</li>
+        <li>a service that routes your traffic through our servers: we have none;</li>
+        <li>a tool for monitoring other people or their devices.</li>
+      </ul>
+    </section>
+
+    <section id="permitted">
+      <h2>3. Which traffic you may use it on</h2>
+      <p>
+        Use it <strong>only on traffic you have the right to inspect</strong>: your own
+        apps, apps you test with their owner's permission, or your own device to understand
+        what it does. You alone are responsible for having that right.
+      </p>
+      <p class="note">
+        Intercepting or decrypting other people's communications without authorization is
+        a crime almost everywhere. In Colombia it is covered by Law 1273 of 2009
+        (interception of computer data and abusive access to a computer system). {{ app }}
+        is not made for that and we do not support that use.
+      </p>
+      <p>
+        Some apps and services forbid inspecting or altering their traffic in their own
+        terms. Complying with them is up to you.
+      </p>
+    </section>
+
+    <section id="certificate">
+      <h2>4. The VPN and the certificate</h2>
+      <p>
+        To see traffic, {{ app }} turns on a <strong>local VPN</strong>, which is the way iOS
+        and Android let one app see the traffic of others. Traffic continues directly to
+        where it was going; the VPN does not divert it to any server.
+      </p>
+      <p>
+        To read encrypted (HTTPS) traffic for the domains you choose, the app generates its
+        own <strong>certificate authority</strong> on your device, which you install and
+        trust by hand. While it is installed and trusted, {{ app }} can decrypt the traffic
+        of those domains. Understand what that means:
+      </p>
+      <ul>
+        <li>the certificate's private key stays on your device and never reaches us;</li>
+        <li>someone holding your unlocked device could use the app to read that traffic;</li>
+        <li>when you stop using the app, <strong>remove the certificate</strong>: the app explains how in Settings.</li>
+      </ul>
+      <p>
+        Many apps reject user-installed certificates (certificate pinning) and stop
+        connecting when their traffic is decrypted. That is those apps' decision, not a
+        defect in {{ app }}.
+      </p>
+    </section>
+
+    <section id="license">
+      <h2>5. License</h2>
+      <p>
+        We grant you a personal, limited, non-exclusive, revocable and non-transferable
+        license to install and use {{ app }} on the devices allowed by the store you got it
+        from, for your own use or your work. We do not sell you the app: we let you use it
+        under these terms.
+      </p>
+    </section>
+
+    <section id="prohibited">
+      <h2>6. What you may not do</h2>
+      <ul>
+        <li>Use it to intercept, read or alter third-party communications without their authorization.</li>
+        <li>Use it to circumvent security measures, payments, licenses or access controls of other services.</li>
+        <li>Decompile, reverse engineer or attempt to extract the source code, except to the extent the law expressly allows.</li>
+        <li>Copy, resell, rent, sublicense or redistribute the app.</li>
+        <li>Get around the limits of the free version by means not provided in the app.</li>
+      </ul>
+    </section>
+
+    <section id="free">
+      <h2>7. Free version</h2>
+      <p>
+        {{ app }} can be used without paying. <strong>Capturing, the inspector and HAR
+        export have no limits.</strong> Without {{ pro }}:
+      </p>
+      <ul>
+        <li>the first {{ free.rules_per_tool }} rules of each tool are applied;</li>
+        <li>at most {{ free.ssl_domains }} domains are decrypted;</li>
+        <li>you can keep {{ free.mock_flows }} mock flow;</li>
+        <li>a counter watches {{ free.counter_conditions }} condition;</li>
+        <li>{{ free.pro_only_tools }} is not available.</li>
+      </ul>
+      <p>
+        There are no ads. We may adjust these limits in future versions; a change will
+        never delete rules you have already written.
+      </p>
+    </section>
+
+    <section id="pro">
+      <h2>8. {{ pro }}</h2>
+      <p>
+        {{ pro }} is an optional in-app purchase that removes those limits and unlocks
+        {{ free.pro_only_tools }}. It comes in three options:
+      </p>
+      {% include plans.html lang="en" %}
+      <p>
+        The exact price, currency and length are shown in the app before you confirm, and
+        are set by the store for your country. <strong>Payment is taken by Apple or
+        Google</strong>, not by us, using the payment method on your store account, and is
+        charged when you confirm the purchase.
+      </p>
+      <p>
+        Pro is tied to the store account you paid with, not to an account of ours: on
+        another device with the same store account, use <strong>Restore purchases</strong>
+        on the Pro screen.
+      </p>
+      <p>
+        If Pro stops being active, nothing is deleted: the limits in section 7 apply again
+        and rules beyond them stay saved without being applied.
+      </p>
+    </section>
+
+    <section id="trial">
+      <h2>9. Free trial</h2>
+      <p>
+        The {{ quarterly.en.name | downcase }} and {{ yearly.en.name | downcase }}
+        subscriptions may start with a <strong>{{ quarterly.trial_days }}-day free
+        trial</strong>, if the store offers you one. The app tells you before you confirm
+        whether you have a trial and when it ends.
+      </p>
+      <ul>
+        <li>The trial is <strong>one per store account</strong> and eligibility is decided by Apple or Google: if you already used it, or were already subscribed, it may not appear.</li>
+        <li><strong>When the trial ends, the subscription automatically converts to paid</strong> on the plan you chose, unless you cancel before. On the App Store you must cancel at least 24 hours before the trial ends.</li>
+        <li>If you cancel during the trial, you keep Pro until the end of the {{ quarterly.trial_days }} days and are not charged.</li>
+        <li>If you buy another plan during the trial —for example, {{ lifetime.en.name | downcase }}— any unused portion of the trial is forfeited.</li>
+      </ul>
+    </section>
+
+    <section id="renewal">
+      <h2>10. Renewal and cancellation</h2>
+      <p>
+        The {{ quarterly.en.name | downcase }} ({{ quarterly.en.period | downcase }}) and
+        {{ yearly.en.name | downcase }} ({{ yearly.en.period | downcase }}) options are
+        <strong>auto-renewable subscriptions</strong>: at the end of each period they renew
+        for the same length at the current price, unless you cancel. The
+        {{ lifetime.en.name | downcase }} option is a single payment and does not renew.
+      </p>
+      <ul>
+        <li><strong>App Store:</strong> payment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period, and your account is charged for renewal within 24 hours prior to the end of that period. Manage or cancel it in <em>Settings → your name → Subscriptions</em>.</li>
+        <li><strong>Google Play:</strong> payment is charged to your Google Play account at confirmation of purchase. Cancel at any time from <em>Google Play → Payments &amp; subscriptions → Subscriptions</em>.</li>
+      </ul>
+      <p>
+        Cancelling takes effect at the end of the period already paid, and you keep Pro
+        until then. <strong>Uninstalling the app does not cancel the subscription.</strong>
+        If the price goes up, the store tells you and, where the law or the store requires
+        it, asks for your consent before charging the new price.
+      </p>
+    </section>
+
+    <section id="refunds">
+      <h2>11. Refunds</h2>
+      <p>
+        Because the store handles payment, <strong>it handles refunds too</strong>, under
+        the policies of Apple
+        (<a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>)
+        or Google Play. We cannot issue or reverse them. Write to us anyway if something
+        went wrong and we will help with the request. This does not affect your statutory
+        consumer rights.
+      </p>
+    </section>
+
+    <section id="apple">
+      <h2>12. If you got it from the App Store</h2>
+      <p>
+        These terms are an agreement between you and {{ co.name }}, not with Apple. Apple's
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Licensed Application End User License Agreement (standard EULA)</a>
+        also applies where it does not conflict with them, and in particular:
+      </p>
+      <ul>
+        <li><strong>Scope.</strong> The license lets you use the app on Apple-branded products you own or control, as permitted by the Usage Rules in the Apple Media Services Terms and Conditions.</li>
+        <li><strong>Maintenance and support.</strong> We provide them, not Apple. Apple has no obligation whatsoever to furnish maintenance or support for the app.</li>
+        <li><strong>Warranty.</strong> If the app fails to conform to an applicable warranty, you may notify Apple and Apple will refund the purchase price, if any. To the maximum extent permitted by law, Apple has no other warranty obligation with respect to the app.</li>
+        <li><strong>Claims.</strong> We, not Apple, are responsible for addressing any claims relating to the app or its use, including product liability claims, failure to conform to legal or regulatory requirements, and consumer protection or privacy claims.</li>
+        <li><strong>Intellectual property.</strong> If a third party claims that the app or your use of it infringes their rights, we, not Apple, are responsible for the investigation, defense, settlement and discharge of that claim.</li>
+        <li><strong>Legal compliance.</strong> You represent that you are not located in a country subject to a U.S. Government embargo or designated as a "terrorist supporting" country, and that you are not on any U.S. Government list of prohibited or restricted parties.</li>
+        <li><strong>Third-party terms.</strong> You must comply with applicable third-party terms when using the app, such as those of your carrier or network.</li>
+        <li><strong>Third-party beneficiary.</strong> Apple and its subsidiaries are third-party beneficiaries of these terms and, once you accept them, may enforce them against you.</li>
+      </ul>
+    </section>
+
+    <section id="google">
+      <h2>13. If you got it from Google Play</h2>
+      <p>
+        Purchases and subscriptions are also governed by the
+        <a href="https://play.google.com/about/play-terms/" rel="noopener">Google Play Terms of Service</a>.
+        Google processes payment and refunds; we never see your payment details. On
+        Android the app uses the system <code>VpnService</code> API only for what is
+        described in section 4, which is its core functionality.
+      </p>
+    </section>
+
+    <section id="warranty">
+      <h2>14. Warranty</h2>
+      <p>
+        The app is provided "as is" and "as available". It is a debugging tool:
+        <strong>it changes the traffic you tell it to change</strong>, and a rule you write
+        can break the app you are testing or make a service behave unexpectedly. That is the
+        point, and it is your call.
+      </p>
+      <p>
+        We make a reasonable effort for it to work well, but we do not guarantee that it is
+        error-free, that it is compatible with every app, network or device, or that it can
+        decrypt a particular app's traffic. Nothing here excludes warranties that the law
+        makes mandatory for consumers.
+      </p>
+    </section>
+
+    <section id="liability">
+      <h2>15. Liability</h2>
+      <p>
+        To the maximum extent permitted by applicable law, we are not liable for indirect
+        losses, lost profits, loss of data, the effects of rules you write on third-party
+        apps, accounts or services, or use of the app contrary to section 3. Our total
+        liability to you for any reason will not exceed the amount you paid for {{ pro }}
+        in the twelve months before the event.
+      </p>
+      <p>
+        These limitations do not apply to willful misconduct or gross negligence, or to
+        anything the law does not allow to be limited.
+      </p>
+    </section>
+
+    <section id="ip">
+      <h2>16. Intellectual property</h2>
+      <p>
+        The code, design, the name "{{ app }}", the icon and other elements of the app
+        belong to {{ co.name }} and are protected by law. The app includes open-source
+        components, each under its own license, which you can review inside the app.
+      </p>
+      <p>
+        The traffic you capture, the rules you write and what you export are yours. We
+        acquire no rights over them, not least because they never reach us.
+      </p>
+    </section>
+
+    <section id="termination">
+      <h2>17. Termination</h2>
+      <p>
+        You can end this agreement at any time by uninstalling the app and removing the
+        certificate. We may suspend the license if you seriously breach these terms,
+        especially section 3. Termination does not entitle you to a refund of a purchase
+        already used, except as provided in section 11.
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>18. Changes to these terms</h2>
+      <p>
+        We may update them to reflect changes in the app, the stores or the law. The
+        current version is always the one published on this page, dated in the header. If a
+        change is substantial we will announce it in the app; continuing to use it
+        afterwards means you accept it.
+      </p>
+    </section>
+
+    <section id="law">
+      <h2>19. Governing law</h2>
+      <p>
+        This agreement is governed by the laws of the Republic of {{ co.country }}. Any
+        dispute will be submitted to the competent courts of {{ co.country }}, without
+        prejudice to consumers' right to go to the courts of their domicile or to the
+        mandatory consumer protection rules of the country where you live.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>20. Contact</h2>
+      <p>
+        {{ co.name }} · {{ co.country }}<br>
+        <a href="mailto:{{ co.email }}">{{ co.email }}</a>
+      </p>
+    </section>
+
+  </div>

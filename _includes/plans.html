@@ -1,0 +1,20 @@
+{%- comment -%}
+  Los planes de _data/plans.yml como tarjetas. Uso: {% include plans.html lang="es" %}
+{%- endcomment -%}
+{%- assign lang = include.lang -%}
+<ul class="plans">
+{%- for plan in site.data.plans %}
+  {%- assign copy = plan[lang] %}
+  <li class="plan">
+    <h3>{{ copy.name }}</h3>
+    <p>{{ copy.period }}</p>
+    {%- if plan.trial_days > 0 %}
+    <span class="tag">{% if lang == 'es' %}{{ plan.trial_days }} días gratis · se renueva{% else %}{{ plan.trial_days }}-day free trial · renews{% endif %}</span>
+    {%- elsif plan.renews %}
+    <span class="tag quiet">{% if lang == 'es' %}se renueva{% else %}renews{% endif %}</span>
+    {%- else %}
+    <span class="tag quiet">{% if lang == 'es' %}sin renovación{% else %}no renewal{% endif %}</span>
+    {%- endif %}
+  </li>
+{%- endfor %}
+</ul>

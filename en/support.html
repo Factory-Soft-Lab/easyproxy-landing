@@ -1,0 +1,141 @@
+---
+layout: default
+lang: en
+nav: support
+alternate: /soporte.html
+title: Support
+description: Help with EasyProxy. Certificate, apps that stop loading while capturing, Pro, free trial and cancellation.
+---
+{%- assign app = site.app.name -%}
+{%- assign pro = site.app.pro -%}
+{%- assign co = site.company -%}
+{%- assign free = site.data.free_tier -%}
+  <div class="wrap doc">
+
+    <span class="eyebrow">Help <span class="code">· support</span></span>
+    <h1>Something not working? Write to us.</h1>
+    <p class="lede">
+      {{ app }} is made by a small team that reads every email. We reply within
+      <strong>5 business days at most</strong>, usually sooner.
+    </p>
+
+    <p class="mail"><a href="mailto:{{ co.email }}">{{ co.email }}</a></p>
+
+    <h2>To help us help you faster</h2>
+    <p>When you report a problem, include what you know of this:</p>
+    <ul>
+      <li>Device model and system version (iOS or Android).</li>
+      <li>App version: it is under <strong>More → About</strong>.</li>
+      <li>What you did, what you expected and what happened instead.</li>
+      <li>If the app closed by itself, the report under <strong>More → Diagnostics</strong>: you can share it from there.</li>
+    </ul>
+    <p class="note">
+      <strong>Do not send us captured traffic without reviewing it.</strong> A HAR or a
+      copied request can carry your apps' tokens, cookies or passwords. If needed, trim or
+      redact those values first. We will never ask you for a password.
+    </p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+
+      <details>
+        <summary>Why does {{ app }} need a VPN?</summary>
+        <p>
+          Because it is the only way iOS and Android let one app see the traffic of others.
+          It is a local VPN: traffic does not go through any server of ours, it goes
+          straight to where it was headed. It is explained in the
+          <a href="{{ '/en/privacy.html#vpn' | relative_url }}">privacy policy</a>.
+        </p>
+      </details>
+
+      <details>
+        <summary>I see requests but not the content of HTTPS ones.</summary>
+        <p>
+          Reading HTTPS needs two things: installing and trusting the app's certificate, and
+          adding the domain under <strong>More → SSL Proxying</strong>. Only what is on that
+          list is decrypted; without {{ pro }}, up to {{ free.ssl_domains }} domains.
+        </p>
+      </details>
+
+      <details>
+        <summary>An app stops loading when I turn capture on.</summary>
+        <p>
+          It is almost always an app that does not accept user-installed certificates
+          (certificate pinning) and refuses to connect when its traffic is decrypted. Remove
+          its domain from SSL Proxying: you will still see it, without the content. On
+          Android, most third-party apps also do not trust user certificates since Android
+          7; your own apps can, through their <code>network_security_config</code>.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I remove the certificate?</summary>
+        <p>
+          Uninstalling the app does not remove it. On iPhone: <em>Settings → General → VPN
+          &amp; Device Management → {{ app }} → Remove Profile</em>. On Android: <em>Settings →
+          Security &amp; privacy → More security &amp; privacy → Encryption &amp; credentials →
+          Trusted credentials → User</em>. Menu names may vary by manufacturer.
+        </p>
+      </details>
+
+      <details>
+        <summary>What does the free version include?</summary>
+        <p>
+          Capturing, the inspector and HAR export, with no limits. Without {{ pro }}, the
+          first {{ free.rules_per_tool }} rules of each tool are applied,
+          {{ free.ssl_domains }} domains are decrypted and {{ free.pro_only_tools }} is not
+          included. The details are in the <a href="{{ '/en/terms.html#free' | relative_url }}">terms</a>.
+        </p>
+      </details>
+
+      <details>
+        <summary>How does the free trial work?</summary>
+        <p>
+          The renewing plans may start with {{ free.trial_days }} free days, once per store
+          account. If you do not cancel before it ends —on the App Store, at least 24 hours
+          before— it converts to paid on the plan you chose. If you cancel during the trial,
+          you are not charged and keep Pro until those days are over.
+        </p>
+      </details>
+
+      <details>
+        <summary>I bought Pro and it does not show up.</summary>
+        <p>
+          Use <strong>Restore purchases</strong> on the Pro screen, with the same App Store or
+          Google Play account you bought with. If it still does not appear, write to us with
+          the store and the date of purchase.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I cancel the subscription?</summary>
+        <p>
+          From your store account: on iPhone, <em>Settings → your name → Subscriptions</em>;
+          on Android, <em>Google Play → Payments &amp; subscriptions → Subscriptions</em>.
+          Uninstalling the app does not cancel it. You keep Pro until the end of the paid
+          period.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I ask for a refund?</summary>
+        <p>
+          The store handles it: Apple at
+          <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>
+          and Google from your Google Play order history. We cannot issue refunds, but write
+          to us and we will help.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I delete everything captured?</summary>
+        <p>
+          Under <strong>Settings → Clear captured data</strong>, or by uninstalling the app.
+          With no account and no server, that removes everything. The certificate is removed
+          separately (see above).
+        </p>
+      </details>
+
+    </div>
+
+  </div>

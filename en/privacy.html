@@ -1,0 +1,274 @@
+---
+layout: default
+lang: en
+nav: privacy
+alternate: /privacidad.html
+title: Privacy Policy
+description: What EasyProxy does with the traffic it captures, the local VPN, the certificate and permissions. No accounts, no server, no analytics.
+---
+{%- assign app = site.app.name -%}
+{%- assign pro = site.app.pro -%}
+{%- assign co = site.company -%}
+  <div class="wrap doc">
+
+    <span class="eyebrow">Legal <span class="code">· privacy</span></span>
+    <h1>Privacy Policy</h1>
+    <p class="meta">
+      Effective {{ site.legal.effective_en }} · Applies to the {{ app }} app for iOS,
+      iPadOS and Android.
+    </p>
+
+    <p class="lede">
+      {{ app }} reads the traffic of the apps on your device to show it to you, and that
+      traffic <strong>never leaves your device</strong>. There are no accounts, no server
+      of ours, and the app has no analytics or ads. This document explains it in detail,
+      including the two things that do touch the internet.
+    </p>
+
+    <nav class="toc" aria-label="Contents">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#controller">Who is responsible</a></li>
+        <li><a href="#not-collected">What we do not collect</a></li>
+        <li><a href="#traffic">The traffic you capture</a></li>
+        <li><a href="#vpn">The local VPN</a></li>
+        <li><a href="#certificate">The certificate</a></li>
+        <li><a href="#permissions">Permissions it asks for</a></li>
+        <li><a href="#you-decide">What leaves because you decide</a></li>
+        <li><a href="#speed">The speed test</a></li>
+        <li><a href="#crashes">Crash reports</a></li>
+        <li><a href="#purchases">Purchases</a></li>
+        <li><a href="#sharing">Who it is shared with</a></li>
+        <li><a href="#retention">How long it is kept</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#delete">How to delete everything</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <section id="controller">
+      <h2>1. Who is responsible</h2>
+      <p>
+        The data controller is <strong>{{ co.name }}</strong>, a company based in
+        {{ co.country }}, developer of {{ app }}. Anything related to this policy is handled
+        at <a href="mailto:{{ co.email }}">{{ co.email }}</a>.
+      </p>
+    </section>
+
+    <section id="not-collected">
+      <h2>2. What we do not collect</h2>
+      <p>To say it before anything else, {{ app }} does <strong>not</strong>:</p>
+      <ul>
+        <li>ask for sign-up, email, phone number or password: there are no user accounts;</li>
+        <li>send captured traffic, your rules or your exports to any server of ours: we have none;</li>
+        <li>include analytics, advertising or attribution SDKs, or use advertising identifiers (no IDFA, no iOS tracking prompt);</li>
+        <li>read your location, contacts, photos, camera or microphone;</li>
+        <li>sell, rent or hand over data to anyone.</li>
+      </ul>
+    </section>
+
+    <section id="traffic">
+      <h2>3. The traffic you capture</h2>
+      <p>
+        While capture is on, the app stores what it sees in the private database the
+        system reserves for {{ app }}:
+      </p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>What is stored</th><th>Example</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>The request</td><td>method, URL, headers, cookies and body</td></tr>
+            <tr><td>The response</td><td>status code, headers and body</td></tr>
+            <tr><td>The connection</td><td>domain, destination IP, port, timings, server certificate</td></tr>
+            <tr><td>What you write</td><td>tool rules, mock flows, scripts, pinned items, notes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        That traffic may contain sensitive data from the apps you inspect: session tokens,
+        passwords sent in clear text, personal data carried in a body. <strong>It stays on
+        your device and we cannot see it.</strong> For an extra layer, turn on the Face ID
+        lock in Settings.
+      </p>
+      <p>
+        None of it is synced or copied to the cloud. On Android the app is also excluded
+        from system backups.
+      </p>
+    </section>
+
+    <section id="vpn">
+      <h2>4. The local VPN</h2>
+      <p>
+        {{ app }} uses the system VPN —<code>NetworkExtension</code> on iOS and
+        <code>VpnService</code> on Android— because it is the only way for one app to see
+        the traffic of others. It is a <strong>local VPN</strong>: traffic enters the app,
+        is recorded on your device and goes out <strong>directly to its original
+        destination</strong>. It is not routed to any server of ours or of third parties.
+      </p>
+      <p>
+        The VPN is not used to show ads, redirect traffic, collect data for other purposes
+        or monetize it. It only turns on when you start capturing, and while it is on the
+        system shows it (the VPN icon, and on Android a notification that cannot be
+        dismissed).
+      </p>
+    </section>
+
+    <section id="certificate">
+      <h2>5. The certificate</h2>
+      <p>
+        To read HTTPS traffic, the app generates its own certificate authority
+        <strong>on your device</strong>. Its private key is kept in the iOS Keychain or the
+        Android Keystore, <strong>never leaves the device</strong> and is not shared with
+        any other. Only traffic for the domains you add in SSL Proxying is decrypted.
+      </p>
+      <p>
+        To install it, on iOS the app opens a local web server, reachable only from the
+        device itself, from which the system downloads the profile. On Android it saves the
+        public part of the certificate —never the key— to Downloads so you can install it
+        from system settings.
+      </p>
+    </section>
+
+    <section id="permissions">
+      <h2>6. Permissions it asks for</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Permission</th><th>What for</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>VPN configuration</td><td>Capturing traffic (section 4). iOS and Android.</td></tr>
+            <tr><td>Notifications</td><td>Telling you capture is still on, and about what you ask it to watch (counters, triggers). On iOS, the recording's Live Activity.</td></tr>
+            <tr><td>Local network</td><td>Showing traffic to a development server on your own network, if you turn that setting on. iOS.</td></tr>
+            <tr><td>Face ID</td><td>The app lock, if you turn it on. The app only receives "yes" or "no" from the system. iOS.</td></tr>
+            <tr><td>Precise location</td><td>Only for the mock location tool: the app <strong>writes</strong> the fake location you choose into the system to test your apps. It does not read or store your real location. Android.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>If you deny a permission, the rest of the app works the same.</p>
+    </section>
+
+    <section id="you-decide">
+      <h2>7. What leaves because you decide</h2>
+      <p>
+        Some features send data off the device, always <strong>because you use them</strong>
+        and to where you choose:
+      </p>
+      <ul>
+        <li><strong>Export and share:</strong> a HAR, a request copied as cURL, a body, a mock flow. The file goes wherever you send it —email, messaging, your cloud— and from then on is governed by that service's terms.</li>
+        <li><strong>Composing and replaying requests, WebSocket:</strong> the request you write or repeat is sent to the server it names, as any HTTP client would.</li>
+        <li><strong>The rules you write</strong> (rewrite, map, block) change your apps' traffic to their own servers.</li>
+      </ul>
+      <p>We receive no copy of any of it.</p>
+    </section>
+
+    <section id="speed">
+      <h2>8. The speed test</h2>
+      <p>
+        The speed tool measures your connection against <strong>Cloudflare</strong>'s public
+        servers (<code>speed.cloudflare.com</code>), and only when you run it. To measure, it
+        downloads and uploads filler data; like any web server, Cloudflare sees your IP
+        address and the time of the connection, and receives nothing you have captured. Its
+        processing is governed by
+        <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare's privacy policy</a>.
+      </p>
+    </section>
+
+    <section id="crashes">
+      <h2>9. Crash reports</h2>
+      <p>
+        When the app closes because of an error, a report is kept <strong>on the device
+        itself</strong>: which version failed and where the code was. It carries no captured
+        traffic. On iOS it arrives through MetricKit, only if you allow sharing analytics
+        with app developers in system settings.
+      </p>
+      <p>
+        You can read those reports in full under <strong>More → Diagnostics</strong>, and
+        <strong>they only leave the device if you share them</strong>.
+      </p>
+    </section>
+
+    <section id="purchases">
+      <h2>10. Purchases</h2>
+      <p>
+        If you buy {{ pro }}, the transaction is processed entirely by <strong>Apple</strong>
+        or <strong>Google</strong>. We never see your name, email or payment details: the
+        store tells the app whether Pro is active, and nothing else. That data is handled by
+        the store you paid in.
+      </p>
+    </section>
+
+    <section id="sharing">
+      <h2>11. Who it is shared with</h2>
+      <p>
+        No one, on our initiative. The only third parties involved are those already named:
+        Apple or Google for purchases and the operating system, and Cloudflare if you run the
+        speed test. We use no ad networks, analytics SDKs or additional third-party services.
+      </p>
+    </section>
+
+    <section id="retention">
+      <h2>12. How long it is kept</h2>
+      <ul>
+        <li><strong>Traffic, rules and crash reports:</strong> on your device, until you delete them or uninstall the app.</li>
+        <li><strong>On our systems:</strong> nothing, because nothing reaches them. If you email support, we keep the email as long as needed to help you.</li>
+      </ul>
+    </section>
+
+    <section id="children">
+      <h2>13. Children</h2>
+      <p>
+        {{ app }} is a tool for professionals, is not directed at children under 14, and does
+        not knowingly collect data from them.
+      </p>
+    </section>
+
+    <section id="rights">
+      <h2>14. Your rights</h2>
+      <p>
+        Under Colombian Law 1581 of 2012 and its regulations, you have the right to know,
+        update and correct your data, to be informed about its use, to file complaints with
+        the Superintendence of Industry and Commerce, to revoke authorization and to request
+        deletion. If you live elsewhere —for example, in the European Union— you also have
+        the rights your law gives you.
+      </p>
+      <p>
+        In practice you exercise them yourself: we hold no data that identifies you, and
+        what the app stores is on your device, where you can view, export or delete it at
+        any time. For anything else, write to
+        <a href="mailto:{{ co.email }}">{{ co.email }}</a> and we will reply within the legal
+        deadlines.
+      </p>
+    </section>
+
+    <section id="delete">
+      <h2>15. How to delete everything</h2>
+      <ul>
+        <li><strong>Captured traffic:</strong> Settings → Clear captured data.</li>
+        <li><strong>Everything in the app:</strong> uninstall it. There is no account to close because there never was one.</li>
+        <li><strong>The certificate:</strong> uninstalling the app does not remove it. On iPhone, <em>Settings → General → VPN &amp; Device Management → {{ app }} → Remove Profile</em>. On Android, <em>Settings → Security &amp; privacy → More security &amp; privacy → Encryption &amp; credentials → Trusted credentials → User</em>. Menu names may vary by manufacturer.</li>
+      </ul>
+    </section>
+
+    <section id="changes">
+      <h2>16. Changes to this policy</h2>
+      <p>
+        If something relevant changes we will update this page and the date in the header.
+        If the change affects what leaves the device, we will also announce it in the app
+        before it takes effect.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>17. Contact</h2>
+      <p>
+        {{ co.name }} · {{ co.country }}<br>
+        <a href="mailto:{{ co.email }}">{{ co.email }}</a>
+      </p>
+    </section>
+
+  </div>

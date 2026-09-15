@@ -1,0 +1,47 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  Todo lo que se repite en el sitio sale de aquí.
+#
+#  Si la app cambia de nombre, de empresa o de correo, se toca este fichero y
+#  nada más: las ocho páginas, los títulos del navegador y el pie lo leen con
+#  {{ site.app.name }}, {{ site.company.name }}… Los planes y los límites
+#  gratis viven aparte, en _data/, porque son listas y copian a la app.
+#
+#  Lo único que NO se arregla desde aquí es la dirección del sitio: va en el
+#  nombre del repositorio y está compilada dentro de las dos apps (LegalLinks).
+# ─────────────────────────────────────────────────────────────────────────────
+
+app:
+  # El nombre tal cual se escribe en texto corrido.
+  name: EasyProxy
+  # El mismo nombre partido en dos para el logotipo, con la segunda mitad en
+  # rojo como en la pantalla de Pro. Si el nombre nuevo no se parte, deja
+  # `wordmark_accent` vacío y `wordmark_lead` con el nombre entero.
+  wordmark_lead: Easy
+  wordmark_accent: Proxy
+  # Cómo se llama la compra. Se escribe entero y no como «nombre + Pro» por si
+  # algún día deja de llamarse así.
+  pro: EasyProxy Pro
+
+company:
+  name: Factory Soft Lab S.A.S.
+  country: Colombia
+  email: support@fabtorysoftlab.com
+  year: 2026
+
+# La fecha desde la que rigen la privacidad y los términos. Cambiarla es decir
+# que cambió el documento: hazlo sólo cuando cambie el texto.
+legal:
+  effective_es: 14 de septiembre de 2026
+  effective_en: September 14, 2026
+
+# Dónde está publicado. `relative_url` y `absolute_url` montan todos los
+# enlaces con esto, así que mudarse a un dominio propio es cambiar estas dos
+# líneas (y LegalLinks en las apps).
+url: https://factory-soft-lab.github.io
+baseurl: /easyproxy-landing
+
+title: EasyProxy
+lang: es
+markdown: kramdown
+exclude:
+  - README.md

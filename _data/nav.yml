@@ -1,0 +1,13 @@
+# Los textos de la barra y del pie en cada idioma, y a qué página va cada uno.
+es:
+  home: { label: Inicio, path: / }
+  privacy: { label: Privacidad, path: /privacidad.html }
+  terms: { label: Términos, path: /terminos.html }
+  support: { label: Soporte, path: /soporte.html }
+  switch: EN
+en:
+  home: { label: Home, path: /en/ }
+  privacy: { label: Privacy, path: /en/privacy.html }
+  terms: { label: Terms, path: /en/terms.html }
+  support: { label: Support, path: /en/support.html }
+  switch: ES

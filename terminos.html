@@ -1,0 +1,358 @@
+---
+layout: default
+lang: es
+nav: terms
+alternate: /en/terms.html
+title: Términos y condiciones
+description: Condiciones de uso de EasyProxy, la herramienta para inspeccionar el tráfico de tus apps. Licencia, uso permitido, Pro, prueba gratis, renovación y ley aplicable.
+---
+{%- assign app = site.app.name -%}
+{%- assign pro = site.app.pro -%}
+{%- assign co = site.company -%}
+{%- assign free = site.data.free_tier -%}
+{%- assign quarterly = site.data.plans[0] -%}
+{%- assign yearly = site.data.plans[1] -%}
+{%- assign lifetime = site.data.plans[2] -%}
+  <div class="wrap doc">
+
+    <span class="eyebrow">Documento legal <span class="code">· EULA</span></span>
+    <h1>Términos y condiciones de uso</h1>
+    <p class="meta">
+      Vigentes desde el {{ site.legal.effective_es }} · Aplican a la aplicación
+      {{ app }} para iOS, iPadOS y Android, y a {{ pro }}.
+    </p>
+
+    <p class="lede">
+      Este acuerdo se celebra entre tú y {{ co.name }}. Al instalar o usar {{ app }}
+      aceptas lo que sigue; si no estás de acuerdo, no la uses y desinstálala.
+    </p>
+
+    <nav class="toc" aria-label="Contenido">
+      <p>Contenido</p>
+      <ol>
+        <li><a href="#quienes">Quiénes somos</a></li>
+        <li><a href="#que-es">Qué es {{ app }}</a></li>
+        <li><a href="#uso-permitido">Sobre qué tráfico puedes usarla</a></li>
+        <li><a href="#certificado">La VPN y el certificado</a></li>
+        <li><a href="#licencia">Licencia de uso</a></li>
+        <li><a href="#prohibido">Lo que no puedes hacer</a></li>
+        <li><a href="#gratis">Versión gratuita</a></li>
+        <li><a href="#pro">{{ pro }}</a></li>
+        <li><a href="#prueba">Prueba gratis</a></li>
+        <li><a href="#renovacion">Renovación y cancelación</a></li>
+        <li><a href="#reembolsos">Reembolsos</a></li>
+        <li><a href="#apple">Si la descargaste del App Store</a></li>
+        <li><a href="#google">Si la descargaste de Google Play</a></li>
+        <li><a href="#garantias">Garantías</a></li>
+        <li><a href="#responsabilidad">Responsabilidad</a></li>
+        <li><a href="#propiedad">Propiedad intelectual</a></li>
+        <li><a href="#terminacion">Terminación</a></li>
+        <li><a href="#cambios">Cambios</a></li>
+        <li><a href="#ley">Ley aplicable</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ol>
+    </nav>
+
+    <section id="quienes">
+      <h2>1. Quiénes somos</h2>
+      <p>
+        {{ app }} es desarrollada y distribuida por <strong>{{ co.name }}</strong>,
+        sociedad domiciliada en {{ co.country }} («nosotros»). Puedes escribirnos a
+        <a href="mailto:{{ co.email }}">{{ co.email }}</a>.
+      </p>
+    </section>
+
+    <section id="que-es">
+      <h2>2. Qué es {{ app }}</h2>
+      <p>
+        {{ app }} es una <strong>herramienta de desarrollo y depuración</strong>: enseña
+        el tráfico de red de las apps de tu propio dispositivo —peticiones, respuestas,
+        cabeceras, cuerpos, tiempos— y te deja modificarlo para probar lo que
+        construyes: reescribir respuestas, pausar peticiones, simular una red lenta o
+        servir respuestas falsas.
+      </p>
+      <p>En particular, la app <strong>no</strong> es:</p>
+      <ul>
+        <li>una VPN de privacidad ni de anonimato: no oculta tu IP ni cifra tu conexión frente a terceros;</li>
+        <li>un servicio que pase tu tráfico por servidores nuestros: no tenemos ninguno;</li>
+        <li>una herramienta para vigilar a otras personas ni sus dispositivos.</li>
+      </ul>
+    </section>
+
+    <section id="uso-permitido">
+      <h2>3. Sobre qué tráfico puedes usarla</h2>
+      <p>
+        Úsala <strong>sólo sobre tráfico que tengas derecho a inspeccionar</strong>: el de
+        tus apps, el de apps que pruebas con permiso de su dueño, o el de tu propio
+        dispositivo para entender qué hace. Eres el único responsable de tener ese
+        derecho.
+      </p>
+      <p class="note">
+        Interceptar o descifrar comunicaciones ajenas sin autorización es un delito en
+        casi todas partes. En Colombia lo tipifica la Ley 1273 de 2009 (interceptación
+        de datos informáticos y acceso abusivo a un sistema informático). {{ app }} no
+        está hecha para eso y no damos soporte a ese uso.
+      </p>
+      <p>
+        Algunas apps y servicios prohíben en sus propias condiciones inspeccionar o
+        alterar su tráfico. Cumplirlas es cosa tuya.
+      </p>
+    </section>
+
+    <section id="certificado">
+      <h2>4. La VPN y el certificado</h2>
+      <p>
+        Para ver el tráfico, {{ app }} enciende una <strong>VPN local</strong>, que es la
+        forma que dan iOS y Android para que una app vea el tráfico de las demás. El
+        tráfico sigue su camino directo hacia donde iba; la VPN no lo desvía a ningún
+        servidor.
+      </p>
+      <p>
+        Para leer el tráfico cifrado (HTTPS) de los dominios que tú elijas, la app genera
+        en tu dispositivo una <strong>autoridad de certificación</strong> propia, que tú
+        instalas y en la que confías a mano. Mientras esté instalada y sea de confianza,
+        {{ app }} puede descifrar el tráfico de esos dominios. Entiende lo que eso implica:
+      </p>
+      <ul>
+        <li>la clave privada de ese certificado se queda en tu dispositivo y nunca nos llega;</li>
+        <li>si alguien obtuviera tu dispositivo desbloqueado, podría usar la app para leer ese tráfico;</li>
+        <li>cuando dejes de usar la app, <strong>quita el certificado</strong>: la app explica cómo en Ajustes.</li>
+      </ul>
+      <p>
+        Muchas apps rechazan certificados instalados por el usuario (lo que se llama
+        <em>certificate pinning</em>) y dejan de conectar si se intenta descifrar su
+        tráfico. Eso es una decisión de esas apps y no un fallo de {{ app }}.
+      </p>
+    </section>
+
+    <section id="licencia">
+      <h2>5. Licencia de uso</h2>
+      <p>
+        Te concedemos una licencia personal, limitada, no exclusiva, revocable e
+        intransferible para instalar y usar {{ app }} en los dispositivos que te permita
+        la tienda donde la descargaste, para tu uso propio o el de tu trabajo. No te
+        vendemos la app: te dejamos usarla bajo estas condiciones.
+      </p>
+    </section>
+
+    <section id="prohibido">
+      <h2>6. Lo que no puedes hacer</h2>
+      <ul>
+        <li>Usarla para interceptar, leer o alterar comunicaciones de terceros sin su autorización.</li>
+        <li>Usarla para eludir medidas de seguridad, pagos, licencias o controles de acceso de otros servicios.</li>
+        <li>Descompilar, aplicar ingeniería inversa o intentar extraer el código fuente, salvo en la medida en que la ley lo permita expresamente.</li>
+        <li>Copiar, revender, alquilar, sublicenciar o redistribuir la app.</li>
+        <li>Eludir los límites de la versión gratuita por medios no previstos en la app.</li>
+      </ul>
+    </section>
+
+    <section id="gratis">
+      <h2>7. Versión gratuita</h2>
+      <p>
+        {{ app }} se puede usar sin pagar. <strong>Capturar, el inspector y la exportación
+        a HAR no tienen límite.</strong> Sin {{ pro }}:
+      </p>
+      <ul>
+        <li>se aplican las {{ free.rules_per_tool }} primeras reglas de cada herramienta;</li>
+        <li>se descifran como mucho {{ free.ssl_domains }} dominios;</li>
+        <li>se puede tener {{ free.mock_flows }} flujo de mocks;</li>
+        <li>un contador vigila {{ free.counter_conditions }} condición;</li>
+        <li>{{ free.pro_only_tools }} no está disponible.</li>
+      </ul>
+      <p>
+        No hay publicidad. Podemos ajustar estos límites en versiones futuras; el cambio
+        nunca borrará las reglas que ya tengas escritas.
+      </p>
+    </section>
+
+    <section id="pro">
+      <h2>8. {{ pro }}</h2>
+      <p>
+        {{ pro }} es una compra opcional dentro de la app que quita esos límites y
+        habilita {{ free.pro_only_tools }}. Se ofrece en tres modalidades:
+      </p>
+      {% include plans.html lang="es" %}
+      <p>
+        El precio, la moneda y la duración exactos se muestran en la app antes de
+        confirmar, y los fija la tienda para tu país. <strong>El cobro lo realiza Apple o
+        Google</strong>, no nosotros, con el medio de pago asociado a tu cuenta de tienda,
+        y se carga al confirmar la compra.
+      </p>
+      <p>
+        Pro va ligado a la cuenta de tienda con la que pagaste, no a un usuario nuestro:
+        en otro dispositivo con la misma cuenta, usa <strong>Restaurar compras</strong> en
+        la pantalla de Pro.
+      </p>
+      <p>
+        Si Pro deja de estar activo, no se borra nada: vuelven a aplicarse los límites
+        del punto 7 y las reglas que pasen de ellos se quedan guardadas sin aplicarse.
+      </p>
+    </section>
+
+    <section id="prueba">
+      <h2>9. Prueba gratis</h2>
+      <p>
+        Las suscripciones {{ quarterly.es.name | downcase }} y {{ yearly.es.name | downcase }}
+        pueden empezar con <strong>{{ quarterly.trial_days }} días de prueba gratis</strong>,
+        si la tienda te la ofrece. La app te dice antes de confirmar si tienes prueba y
+        cuándo termina.
+      </p>
+      <ul>
+        <li>La prueba es <strong>una por cuenta de tienda</strong> y la decide Apple o Google: si ya la usaste, o ya estuviste suscrito, puede no aparecer.</li>
+        <li><strong>Al terminar la prueba, la suscripción pasa a pago automáticamente</strong> por el plan que elegiste, salvo que la canceles antes. En el App Store hay que cancelarla al menos 24 horas antes de que acabe la prueba.</li>
+        <li>Si cancelas durante la prueba, conservas Pro hasta el final de los {{ quarterly.trial_days }} días y no se te cobra nada.</li>
+        <li>Si durante la prueba compras otro plan —por ejemplo, {{ lifetime.es.name | downcase }}—, lo que quedaba de prueba se pierde.</li>
+      </ul>
+    </section>
+
+    <section id="renovacion">
+      <h2>10. Renovación y cancelación</h2>
+      <p>
+        Las modalidades {{ quarterly.es.name | downcase }} ({{ quarterly.es.period | downcase }})
+        y {{ yearly.es.name | downcase }} ({{ yearly.es.period | downcase }}) son
+        <strong>suscripciones de renovación automática</strong>: al acabar cada periodo se
+        renuevan solas por el mismo plazo y al precio vigente, salvo que las canceles.
+        La modalidad {{ lifetime.es.name | downcase }} es un pago único y no se renueva.
+      </p>
+      <ul>
+        <li><strong>App Store:</strong> el pago se carga a tu cuenta de Apple al confirmar. La suscripción se renueva salvo que desactives la renovación automática al menos 24 horas antes de que termine el periodo en curso, y la renovación se cobra dentro de las 24 horas previas a ese final. La gestionas y cancelas en <em>Ajustes → tu nombre → Suscripciones</em>.</li>
+        <li><strong>Google Play:</strong> el pago se carga a tu cuenta de Google Play al confirmar. Puedes cancelar cuando quieras desde <em>Google Play → Pagos y suscripciones → Suscripciones</em>.</li>
+      </ul>
+      <p>
+        Cancelar surte efecto al terminar el periodo ya pagado, y hasta entonces
+        conservas Pro. <strong>Desinstalar la app no cancela la suscripción.</strong> Si el
+        precio sube, la tienda te avisa y, cuando la ley o la tienda lo exigen, te pide
+        conformidad antes de cobrarte el precio nuevo.
+      </p>
+    </section>
+
+    <section id="reembolsos">
+      <h2>11. Reembolsos</h2>
+      <p>
+        Como el cobro lo gestiona la tienda, <strong>los reembolsos también</strong>,
+        conforme a las políticas de Apple
+        (<a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>)
+        o de Google Play. Nosotros no podemos emitirlos ni revertirlos. Escríbenos
+        igualmente si algo salió mal y te ayudamos con el trámite. Esto no afecta los
+        derechos que te reconozca la Ley 1480 de 2011 (Estatuto del Consumidor).
+      </p>
+    </section>
+
+    <section id="apple">
+      <h2>12. Si la descargaste del App Store</h2>
+      <p>
+        Estas condiciones son un acuerdo entre tú y {{ co.name }}, no con Apple. Además de
+        ellas, rige el
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Contrato de licencia de aplicaciones con licencia de Apple (EULA estándar)</a>
+        en lo que no contradigan, y en particular:
+      </p>
+      <ul>
+        <li><strong>Alcance.</strong> La licencia te permite usar la app en productos de Apple que poseas o controles, según las Reglas de uso de los Términos de los Servicios Multimedia de Apple.</li>
+        <li><strong>Mantenimiento y soporte.</strong> Los damos nosotros, no Apple. Apple no tiene obligación alguna de prestar mantenimiento ni soporte sobre la app.</li>
+        <li><strong>Garantía.</strong> Si la app no cumple una garantía aplicable, puedes avisar a Apple y Apple te reembolsará el precio pagado, si lo hubo. En la medida que permita la ley, Apple no tiene ninguna otra obligación de garantía respecto a la app.</li>
+        <li><strong>Reclamaciones.</strong> Somos nosotros, y no Apple, quienes respondemos por cualquier reclamación sobre la app o su uso: responsabilidad por producto, incumplimiento de requisitos legales o normativos, y protección del consumidor o de la privacidad.</li>
+        <li><strong>Propiedad intelectual.</strong> Si un tercero alega que la app o su uso infringe sus derechos, nosotros, y no Apple, somos responsables de investigarlo, defenderlo, resolverlo y atenderlo.</li>
+        <li><strong>Cumplimiento legal.</strong> Declaras que no estás en un país sujeto a embargo del Gobierno de EE. UU. ni designado como país que apoya el terrorismo, y que no figuras en ninguna lista de partes prohibidas o restringidas de ese Gobierno.</li>
+        <li><strong>Condiciones de terceros.</strong> Al usar la app debes cumplir las condiciones de los servicios de terceros que correspondan, como las de tu operador o tu red.</li>
+        <li><strong>Tercero beneficiario.</strong> Apple y sus filiales son terceros beneficiarios de estas condiciones y, una vez las aceptas, pueden hacerlas valer frente a ti.</li>
+      </ul>
+    </section>
+
+    <section id="google">
+      <h2>13. Si la descargaste de Google Play</h2>
+      <p>
+        La compra y la suscripción se rigen además por las
+        <a href="https://play.google.com/about/play-terms/" rel="noopener">Condiciones de Servicio de Google Play</a>.
+        Google procesa el pago y los reembolsos; nosotros no vemos tus datos de pago.
+        En Android la app usa la API <code>VpnService</code> del sistema sólo para lo
+        descrito en el punto 4, que es su función principal.
+      </p>
+    </section>
+
+    <section id="garantias">
+      <h2>14. Garantías</h2>
+      <p>
+        La app se entrega «tal cual» y «según disponibilidad». Es una herramienta de
+        depuración: <strong>cambia el tráfico que tú le dices que cambie</strong>, y una
+        regla que escribas puede romper la app que estás probando o hacer que un
+        servicio se comporte de forma inesperada. De eso se trata, y es decisión tuya.
+      </p>
+      <p>
+        Hacemos un esfuerzo razonable por que funcione bien, pero no garantizamos que
+        esté libre de errores, que sea compatible con todas las apps, redes o
+        dispositivos, ni que pueda descifrar el tráfico de una app concreta. Nada de esto
+        excluye las garantías que la ley colombiana declare irrenunciables para
+        consumidores.
+      </p>
+    </section>
+
+    <section id="responsabilidad">
+      <h2>15. Responsabilidad</h2>
+      <p>
+        En la máxima medida que permita la ley aplicable, no respondemos por pérdidas
+        indirectas, lucro cesante, pérdida de datos, ni por los efectos de las reglas que
+        escribas sobre apps, cuentas o servicios de terceros, ni por el uso de la app en
+        contra del punto 3. Nuestra responsabilidad total frente a ti, por cualquier
+        concepto, no excederá el monto que hayas pagado por {{ pro }} en los doce meses
+        anteriores al hecho.
+      </p>
+      <p>
+        Estas limitaciones no aplican al dolo ni a la culpa grave, ni a lo que la ley
+        colombiana no permita limitar.
+      </p>
+    </section>
+
+    <section id="propiedad">
+      <h2>16. Propiedad intelectual</h2>
+      <p>
+        El código, el diseño, el nombre «{{ app }}», el icono y demás elementos de la app
+        son de {{ co.name }} y están protegidos por la ley. La app incluye componentes de
+        código abierto, cada uno bajo su licencia, que puedes consultar dentro de la app.
+      </p>
+      <p>
+        El tráfico que capturas, las reglas que escribes y lo que exportas son tuyos. No
+        adquirimos ningún derecho sobre ello, entre otras cosas porque no llega a
+        nuestras manos.
+      </p>
+    </section>
+
+    <section id="terminacion">
+      <h2>17. Terminación</h2>
+      <p>
+        Puedes terminar este acuerdo en cualquier momento desinstalando la app y
+        quitando el certificado. Nosotros podemos suspender la licencia si incumples
+        estos términos de forma grave, en especial el punto 3. La terminación no te da
+        derecho a reembolso de una compra ya consumida, salvo lo dispuesto en el punto 11.
+      </p>
+    </section>
+
+    <section id="cambios">
+      <h2>18. Cambios en estos términos</h2>
+      <p>
+        Podemos actualizarlos para reflejar cambios en la app, en las tiendas o en la
+        ley. La versión vigente es siempre la publicada en esta página, con su fecha en el
+        encabezado. Si el cambio es sustancial lo avisaremos dentro de la app; seguir
+        usándola después equivale a aceptarlo.
+      </p>
+    </section>
+
+    <section id="ley">
+      <h2>19. Ley aplicable</h2>
+      <p>
+        Este acuerdo se rige por las leyes de la República de {{ co.country }}. Cualquier
+        controversia se someterá a los jueces competentes de {{ co.country }}, sin
+        perjuicio del derecho que tienen los consumidores a acudir al juez de su
+        domicilio o a la Superintendencia de Industria y Comercio, ni de las normas
+        imperativas de protección al consumidor del país donde residas.
+      </p>
+    </section>
+
+    <section id="contacto">
+      <h2>20. Contacto</h2>
+      <p>
+        {{ co.name }} · {{ co.country }}<br>
+        <a href="mailto:{{ co.email }}">{{ co.email }}</a>
+      </p>
+    </section>
+
+  </div>

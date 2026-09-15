@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- El icono de la app (App/Assets.xcassets/AppIcon, variante oscura), redibujado a vector:
+       cuatro filas de tráfico, y la roja es la que se ha tocado. -->
+  <rect width="1024" height="1024" rx="228" fill="#0a0b0e"/>
+  <rect x="184" y="174" width="553" height="122" rx="61" fill="#f3f5f4"/>
+  <rect x="348" y="358" width="532" height="122" rx="61" fill="#f3f5f4"/>
+  <rect x="143" y="543" width="410" height="122" rx="61" fill="#dc4f4c"/>
+  <rect x="430" y="727" width="368" height="122" rx="61" fill="#6e6f73"/>
+</svg>
