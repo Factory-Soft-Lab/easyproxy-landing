@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.app.name }}</title>
-<meta name="description" content="{{ page.description }}">
+<meta name="description" content="{{ page.description | replace: '%APP%', site.app.name }}">
 <meta name="theme-color" content="#0a0b0e">
 <link rel="icon" href="{{ '/assets/icon.svg' | relative_url }}" type="image/svg+xml">
 <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
@@ -24,7 +24,7 @@
 <meta name="robots" content="noindex">
 {%- endunless %}
 <meta property="og:title" content="{% if page.title %}{{ page.title }} — {% endif %}{{ site.app.name }}">
-<meta property="og:description" content="{{ page.description }}">
+<meta property="og:description" content="{{ page.description | replace: '%APP%', site.app.name }}">
 <meta property="og:type" content="website">
 </head>
 <body>

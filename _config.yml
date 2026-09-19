@@ -6,6 +6,9 @@
 #  {{ site.app.name }}, {{ site.company.name }}… Los planes y los límites
 #  gratis viven aparte, en _data/, porque son listas y copian a la app.
 #
+#  En las cabeceras de cada página (`description:`) no corre Liquid, así que ahí
+#  el nombre se escribe como %APP% y la plantilla lo sustituye por app.name.
+#
 #  Lo único que NO se arregla desde aquí es la dirección del sitio: va en el
 #  nombre del repositorio y está compilada dentro de las dos apps (LegalLinks).
 # ─────────────────────────────────────────────────────────────────────────────
