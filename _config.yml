@@ -40,11 +40,23 @@ legal:
 # Dónde está publicado. `relative_url` y `absolute_url` montan todos los
 # enlaces con esto, así que mudarse a un dominio propio es cambiar estas dos
 # líneas (y LegalLinks en las apps).
-url: https://factory-soft-lab.github.io
-baseurl: /easyproxy-landing
+# Dominio propio: easyproxy.factorysoftlab.com (archivo CNAME). Antes de fusionar, Ernesto crea el registro DNS
+# CNAME easyproxy → factory-soft-lab.github.io y, ya publicado, activa «Enforce HTTPS» en Settings → Pages.
+# GitHub redirige la dirección vieja (github.io/easyproxy-landing) a la nueva, así que los LegalLinks de las apps
+# siguen funcionando; aun así conviene actualizarlos en la próxima versión de cada app.
+url: https://easyproxy.factorysoftlab.com
+baseurl: ""
 
 title: EasyProxy
 lang: es
 markdown: kramdown
 exclude:
   - README.md
+
+# Tiendas. Vacío = la app aún no tiene ficha pública y el botón no sale (se ve «enlace en camino»).
+# PENDIENTE: el enlace de Google Play (app.easyproxy aún responde 404) y el de App Store (la versión iOS
+# sale con suscripción de USD 3 al mes). Víctor los entrega; se pegan aquí y nada más.
+stores:
+  google_play: ""
+  app_store: ""
+ios_price_usd_month: 3
