@@ -1,0 +1,5 @@
+# Capturas de la portada, en el orden en que se muestran. Cada una: src (en assets/screens/), alt_es y alt_en.
+# PENDIENTE: capturas reales de Android (emulador o teléfono con datos de prueba) y de iOS (Víctor da acceso).
+# Mientras las listas estén vacías, la portada muestra un aviso en lugar de la galería.
+android: []
+ios: []

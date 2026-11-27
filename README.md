@@ -3,7 +3,7 @@
 Sitio público de **EasyProxy**: la portada y los tres documentos que exigen App
 Store y Google Play —privacidad, términos y soporte—, en español e inglés.
 
-🔗 https://factory-soft-lab.github.io/easyproxy-landing/
+🔗 https://easyproxy.factorysoftlab.com (dominio propio, archivo `CNAME`; antes https://factory-soft-lab.github.io/easyproxy-landing/, que GitHub redirige)
 
 ## Por qué vive en un repo aparte
 
@@ -36,8 +36,8 @@ Para verlo en local sin instalar Ruby, con la misma imagen que usa Pages:
 
 ```sh
 docker run --rm -v "$PWD":/srv/jekyll -p 4000:4000 jekyll/jekyll:4 \
-  jekyll serve --host 0.0.0.0 --baseurl /easyproxy-landing
-# http://localhost:4000/easyproxy-landing/
+  jekyll serve --host 0.0.0.0 --baseurl ""
+# http://localhost:4000/
 ```
 
 ## Si la app cambia de nombre
