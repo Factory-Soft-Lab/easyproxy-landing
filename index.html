@@ -12,7 +12,7 @@ description: "%APP% enseña y modifica el tráfico de las apps de tu iPhone o tu
 
     <section class="hero">
       <div>
-        <span class="eyebrow">Android hoy · iPhone y iPad muy pronto</span>
+        <span class="eyebrow">iPhone, iPad y Android</span>
         <h1>El tráfico de tus apps, en el propio teléfono.</h1>
         <p class="lede">
           <span class="wordmark">{{ site.app.wordmark_lead }}<span class="accent">{{ site.app.wordmark_accent }}</span></span>
@@ -21,9 +21,14 @@ description: "%APP% enseña y modifica el tráfico de las apps de tu iPhone o tu
           proxy a mano y sin mandar nada a ningún servidor.
         </p>
         <p class="pill"><span class="dot"></span>La VPN es local: el tráfico no sale del dispositivo</p>
+        <div class="cta">
+          <a class="store" href="#descargar">Descargar</a>
+          <span class="meta">Gratis para capturar · Pro USD {{ site.pro_price_usd_month }} al mes</span>
+        </div>
       </div>
       <div class="hero-art">
-        <img src="{{ '/assets/icon.svg' | relative_url }}" alt="Icono de {{ app }}: cuatro filas de tráfico, una de ellas en rojo">
+        <figure class="phone phone-back"><img src="{{ '/assets/screens/android-01-inicio.jpg' | relative_url }}" alt="Inicio de EasyProxy en Android" width="540" height="1200"></figure>
+        <figure class="phone phone-front"><img src="{{ '/assets/screens/ios-01-inicio.jpg' | relative_url }}" alt="Inicio de EasyProxy en iPhone: la captura encendida, métricas y dominios" width="552" height="1200"></figure>
       </div>
     </section>
 
@@ -78,6 +83,18 @@ description: "%APP% enseña y modifica el tráfico de las apps de tu iPhone o tu
         <p>Exporta a HAR, copia una petición como cURL o comparte un flujo de mocks con tu equipo.</p>
       </li>
 
+    </ul>
+
+    <ul class="chips" aria-label="Herramientas incluidas">
+      <li>Inspector</li>
+      <li>Mock Local</li>
+      <li>DNS Spoofing</li>
+      <li>Breakpoint</li>
+      <li>Rewrite</li>
+      <li>Block List</li>
+      <li>Network Conditions</li>
+      <li>Scripting</li>
+      <li>HAR</li>
     </ul>
 
     {% include availability.html lang="es" %}

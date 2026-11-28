@@ -12,7 +12,7 @@ description: "%APP% shows and changes the traffic of the apps on your iPhone or 
 
     <section class="hero">
       <div>
-        <span class="eyebrow">Android today · iPhone and iPad soon</span>
+        <span class="eyebrow">iPhone, iPad and Android</span>
         <h1>Your apps' traffic, right on the phone.</h1>
         <p class="lede">
           <span class="wordmark">{{ site.app.wordmark_lead }}<span class="accent">{{ site.app.wordmark_accent }}</span></span>
@@ -21,9 +21,14 @@ description: "%APP% shows and changes the traffic of the apps on your iPhone or 
           nothing sent to any server.
         </p>
         <p class="pill"><span class="dot"></span>The VPN is local: traffic never leaves the device</p>
+        <div class="cta">
+          <a class="store" href="#download">Download</a>
+          <span class="meta">Free to capture · Pro USD {{ site.pro_price_usd_month }} a month</span>
+        </div>
       </div>
       <div class="hero-art">
-        <img src="{{ '/assets/icon.svg' | relative_url }}" alt="{{ app }} icon: four rows of traffic, one of them red">
+        <figure class="phone phone-back"><img src="{{ '/assets/screens/android-01-inicio.jpg' | relative_url }}" alt="EasyProxy home on Android" width="540" height="1200"></figure>
+        <figure class="phone phone-front"><img src="{{ '/assets/screens/ios-01-inicio.jpg' | relative_url }}" alt="EasyProxy home on iPhone: capture on, metrics and domains" width="552" height="1200"></figure>
       </div>
     </section>
 
@@ -78,6 +83,18 @@ description: "%APP% shows and changes the traffic of the apps on your iPhone or 
         <p>Export to HAR, copy a request as cURL or share a mock flow with your team.</p>
       </li>
 
+    </ul>
+
+    <ul class="chips" aria-label="Tools included">
+      <li>Inspector</li>
+      <li>Mock Local</li>
+      <li>DNS Spoofing</li>
+      <li>Breakpoint</li>
+      <li>Rewrite</li>
+      <li>Block List</li>
+      <li>Network Conditions</li>
+      <li>Scripting</li>
+      <li>HAR</li>
     </ul>
 
     {% include availability.html lang="en" %}

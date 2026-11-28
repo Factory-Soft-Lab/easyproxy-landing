@@ -27,14 +27,16 @@
     </li>
   </ul>
 
-  {%- assign all = shots.android | concat: shots.ios %}
-  {%- if all.size > 0 %}
+  {%- assign groups = "ios,android" | split: "," %}
+  {%- for g in groups %}
+  {%- assign list = shots[g] %}
+  {%- if list.size > 0 %}
+  <h3 class="shots-title">{% if g == "ios" %}iPhone{% else %}Android{% endif %}</h3>
   <ul class="shots">
-    {%- for s in all %}
-    <li><img src="{{ s.src | prepend: '/assets/screens/' | relative_url }}" alt="{% if es %}{{ s.alt_es }}{% else %}{{ s.alt_en }}{% endif %}" loading="lazy"></li>
+    {%- for s in list %}
+    <li><img src="{{ s.src | prepend: '/assets/screens/' | relative_url }}" alt="{% if es %}{{ s.alt_es }}{% else %}{{ s.alt_en }}{% endif %}" loading="lazy" width="552" height="1200"></li>
     {%- endfor %}
   </ul>
-  {%- else %}
-  <p class="meta">{% if es %}Las capturas de Android y de iOS llegan con las fichas de las tiendas.{% else %}Android and iOS screenshots arrive with the store listings.{% endif %}</p>
   {%- endif %}
+  {%- endfor %}
 </section>
