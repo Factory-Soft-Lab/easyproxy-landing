@@ -11,7 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.app.name }}</title>
 <meta name="description" content="{{ page.description | replace: '%APP%', site.app.name }}">
-<meta name="theme-color" content="#0a0b0e">
+<meta name="theme-color" content="#0a0b0e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f4f6" media="(prefers-color-scheme: light)">
 <link rel="icon" href="{{ '/assets/icon.svg' | relative_url }}" type="image/svg+xml">
 <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
 {%- unless page.noindex %}
