@@ -1,17 +1,29 @@
 # Capturas de la portada, en el orden en que se muestran. Cada una: src (en assets/screens/), alt_es y alt_en.
-# PROVISIONALES: las de iOS salen de easyproxy-android/docs/ios-reference (capturas de referencia de la app iOS).
-# Se reemplazan por las de las fichas de las tiendas cuando existan (ver README).
-android: []
+# Salen de las apps reales con datos de ejemplo: iOS de easyproxy/docs/screenshots/ios (Maestro,
+# Simulador iPhone 18 Pro Max) y Android de easyproxy-android/docs/screenshots/android (emulador).
+android:
+  - src: android-01-inicio.jpg
+    alt_es: "Inicio: la captura encendida y los dominios con más tráfico."
+    alt_en: "Home: capture on and the busiest domains."
+  - src: android-02-detalle.jpg
+    alt_es: "Detalle de una petición: cabeceras y cuerpo."
+    alt_en: "Request detail: headers and body."
+  - src: android-03-herramientas.jpg
+    alt_es: "Herramientas: Block List, Map Local, Breakpoint, Rewrite y más."
+    alt_en: "Tools: Block List, Map Local, Breakpoint, Rewrite and more."
+  - src: android-04-rewrite.jpg
+    alt_es: "Rewrite: cambiar cabeceras y cuerpos al vuelo."
+    alt_en: "Rewrite: change headers and bodies on the fly."
 ios:
+  - src: ios-01-inicio.jpg
+    alt_es: "Inicio: la captura encendida, métricas y dominios."
+    alt_en: "Home: capture on, metrics and domains."
   - src: ios-02-flujos.jpg
     alt_es: "Lista de peticiones capturadas de un dominio, con método, tamaño, tiempo y código."
     alt_en: "Captured requests for one domain, with method, size, time and status code."
-  - src: ios-03-detalle.jpg
-    alt_es: "Detalle de una petición: cabeceras y cuerpo."
-    alt_en: "Request detail: headers and body."
-  - src: ios-13-maplocal.jpg
-    alt_es: "Map Local: responder con un archivo propio."
-    alt_en: "Map Local: answer with your own file."
-  - src: ios-21-rewrite.jpg
-    alt_es: "Rewrite: cambiar cabeceras y cuerpos al vuelo."
-    alt_en: "Rewrite: change headers and bodies on the fly."
+  - src: ios-04-herramientas.jpg
+    alt_es: "Herramientas para bloquear, simular, pausar y reescribir peticiones."
+    alt_en: "Tools to block, mock, pause and rewrite requests."
+  - src: ios-05-pro-mensual.jpg
+    alt_es: "EasyProxy Pro: un solo plan mensual."
+    alt_en: "EasyProxy Pro: a single monthly plan."

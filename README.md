@@ -80,9 +80,9 @@ pequeño: los enlaces usan `--red-ink`, que da 7:1 sobre el suelo.
 ## Capturas
 
 La galería de la portada lee `_data/screens.yml` y las imágenes de `assets/screens/`.
-Las cuatro de iOS que hay hoy son **provisionales**: salen de las capturas de referencia
-de la app iOS (`easyproxy-android/docs/ios-reference`). Se reemplazan por las de las fichas
-de App Store y Google Play cuando estén; las de Android se añaden en `android:`.
+Son capturas reales de las dos apps con datos de ejemplo: iOS desde `easyproxy/docs/screenshots/ios`
+(Maestro en el Simulador) y Android desde `easyproxy-android/docs/screenshots/android` (emulador),
+reducidas a 1200 px de alto en JPEG.
 
 ## Tiendas y plan
 
