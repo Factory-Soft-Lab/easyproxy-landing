@@ -1,5 +1,5 @@
 {%- comment -%}
-  Dónde descargarla: Android hoy, iOS en camino. Los enlaces salen de site.stores en _config.yml; si falta uno, no hay
+  Dónde descargarla: Android e iOS. Los enlaces salen de site.stores en _config.yml; si falta uno, no hay
   botón roto sino un aviso. Uso: {% include availability.html lang="es" %}
 {%- endcomment -%}
 {%- assign es = include.lang == 'es' -%}
@@ -9,7 +9,7 @@
   <ul class="cards">
     <li class="card">
       <h3>Android</h3>
-      <p>{% if es %}Disponible hoy. Capturar, el inspector y exportar a HAR son gratis.{% else %}Available today. Capturing, the inspector and HAR export are free.{% endif %}</p>
+      <p>{% if es %}Capturar, el inspector y exportar a HAR son gratis; Pro cuesta USD {{ site.pro_price_usd_month }} al mes.{% else %}Capturing, the inspector and HAR export are free; Pro is USD {{ site.pro_price_usd_month }} a month.{% endif %}</p>
       {%- if site.stores.google_play != "" %}
       <a class="store" href="{{ site.stores.google_play }}" rel="noopener">Google Play</a>
       {%- else %}
@@ -18,7 +18,7 @@
     </li>
     <li class="card">
       <h3>iPhone y iPad</h3>
-      <p>{% if es %}Muy pronto, con una suscripción de USD {{ site.ios_price_usd_month }} al mes. El precio final en tu moneda lo fija App Store.{% else %}Coming soon, with a USD {{ site.ios_price_usd_month }} monthly subscription. The App Store sets the final price in your currency.{% endif %}</p>
+      <p>{% if es %}La misma suscripción de USD {{ site.pro_price_usd_month }} al mes. El precio final en tu moneda lo fija App Store.{% else %}The same USD {{ site.pro_price_usd_month }} monthly subscription. The App Store sets the final price in your currency.{% endif %}</p>
       {%- if site.stores.app_store != "" %}
       <a class="store" href="{{ site.stores.app_store }}" rel="noopener">App Store</a>
       {%- else %}
@@ -27,14 +27,16 @@
     </li>
   </ul>
 
-  {%- assign all = shots.android | concat: shots.ios %}
-  {%- if all.size > 0 %}
+  {%- assign groups = "ios,android" | split: "," %}
+  {%- for g in groups %}
+  {%- assign list = shots[g] %}
+  {%- if list.size > 0 %}
+  <h3 class="shots-title">{% if g == "ios" %}iPhone{% else %}Android{% endif %}</h3>
   <ul class="shots">
-    {%- for s in all %}
-    <li><img src="{{ s.src | prepend: '/assets/screens/' | relative_url }}" alt="{% if es %}{{ s.alt_es }}{% else %}{{ s.alt_en }}{% endif %}" loading="lazy"></li>
+    {%- for s in list %}
+    <li><img src="{{ s.src | prepend: '/assets/screens/' | relative_url }}" alt="{% if es %}{{ s.alt_es }}{% else %}{{ s.alt_en }}{% endif %}" loading="lazy" width="552" height="1200"></li>
     {%- endfor %}
   </ul>
-  {%- else %}
-  <p class="meta">{% if es %}Las capturas de Android y de iOS llegan con las fichas de las tiendas.{% else %}Android and iOS screenshots arrive with the store listings.{% endif %}</p>
   {%- endif %}
+  {%- endfor %}
 </section>

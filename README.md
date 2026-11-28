@@ -76,3 +76,16 @@ la paleta de EasyProxy (suelo del icono, rojo de «Proxy», tinta del splash). L
 colores están copiados a mano en el bloque `:root` de `assets/styles.css`.
 Tema oscuro único, como la pantalla de Pro. El rojo de marca nunca en texto
 pequeño: los enlaces usan `--red-ink`, que da 7:1 sobre el suelo.
+
+## Capturas
+
+La galería de la portada lee `_data/screens.yml` y las imágenes de `assets/screens/`.
+Son capturas reales de las dos apps con datos de ejemplo: iOS desde `easyproxy/docs/screenshots/ios`
+(Maestro en el Simulador) y Android desde `easyproxy-android/docs/screenshots/android` (emulador),
+reducidas a 1200 px de alto en JPEG.
+
+## Tiendas y plan
+
+- Plan único: Pro mensual de USD 3 (`_data/plans.yml`, `pro_price_usd_month` en `_config.yml`).
+- `stores.google_play` apunta a `com.fabtory.easyproxy`; responde 404 hasta que la ficha se publique.
+- `stores.app_store` va vacío y el botón no sale hasta pegar el enlace que da App Store Connect.

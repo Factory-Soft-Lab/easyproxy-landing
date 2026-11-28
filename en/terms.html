@@ -10,9 +10,7 @@ description: "Terms of use for %APP%, the tool for inspecting your apps' traffic
 {%- assign pro = site.app.pro -%}
 {%- assign co = site.company -%}
 {%- assign free = site.data.free_tier -%}
-{%- assign quarterly = site.data.plans[0] -%}
-{%- assign yearly = site.data.plans[1] -%}
-{%- assign lifetime = site.data.plans[2] -%}
+{%- assign monthly = site.data.plans[0] -%}
   <div class="wrap doc">
 
     <span class="eyebrow">Legal <span class="code">· EULA</span></span>
@@ -195,27 +193,25 @@ description: "Terms of use for %APP%, the tool for inspecting your apps' traffic
     <section id="trial">
       <h2>9. Free trial</h2>
       <p>
-        The {{ quarterly.en.name | downcase }} and {{ yearly.en.name | downcase }}
-        subscriptions may start with a <strong>{{ quarterly.trial_days }}-day free
+        The {{ monthly.en.name | downcase }}
+        subscription may start with a <strong>{{ monthly.trial_days }}-day free
         trial</strong>, if the store offers you one. The app tells you before you confirm
         whether you have a trial and when it ends.
       </p>
       <ul>
         <li>The trial is <strong>one per store account</strong> and eligibility is decided by Apple or Google: if you already used it, or were already subscribed, it may not appear.</li>
-        <li><strong>When the trial ends, the subscription automatically converts to paid</strong> on the plan you chose, unless you cancel before. On the App Store you must cancel at least 24 hours before the trial ends.</li>
-        <li>If you cancel during the trial, you keep Pro until the end of the {{ quarterly.trial_days }} days and are not charged.</li>
-        <li>If you buy another plan during the trial —for example, {{ lifetime.en.name | downcase }}— any unused portion of the trial is forfeited.</li>
+        <li><strong>When the trial ends, the subscription automatically converts to paid</strong> on the monthly plan, unless you cancel before. On the App Store you must cancel at least 24 hours before the trial ends.</li>
+        <li>If you cancel during the trial, you keep Pro until the end of the {{ monthly.trial_days }} days and are not charged.</li>
       </ul>
     </section>
 
     <section id="renewal">
       <h2>10. Renewal and cancellation</h2>
       <p>
-        The {{ quarterly.en.name | downcase }} ({{ quarterly.en.period | downcase }}) and
-        {{ yearly.en.name | downcase }} ({{ yearly.en.period | downcase }}) options are
-        <strong>auto-renewable subscriptions</strong>: at the end of each period they renew
-        for the same length at the current price, unless you cancel. The
-        {{ lifetime.en.name | downcase }} option is a single payment and does not renew.
+        Pro has a single option, {{ monthly.en.name | downcase }} at USD {{ monthly.price_usd }}
+        (the store sets the final price in your currency), and it is an
+        <strong>auto-renewable subscription</strong>: at the end of each month it renews
+        for another month at the current price, unless you cancel.
       </p>
       <ul>
         <li><strong>App Store:</strong> payment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period, and your account is charged for renewal within 24 hours prior to the end of that period. Manage or cancel it in <em>Settings → your name → Subscriptions</em>.</li>
