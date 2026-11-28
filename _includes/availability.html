@@ -1,5 +1,5 @@
 {%- comment -%}
-  Dónde descargarla: Android hoy, iOS en camino. Los enlaces salen de site.stores en _config.yml; si falta uno, no hay
+  Dónde descargarla: Android e iOS. Los enlaces salen de site.stores en _config.yml; si falta uno, no hay
   botón roto sino un aviso. Uso: {% include availability.html lang="es" %}
 {%- endcomment -%}
 {%- assign es = include.lang == 'es' -%}
@@ -9,7 +9,7 @@
   <ul class="cards">
     <li class="card">
       <h3>Android</h3>
-      <p>{% if es %}Disponible hoy. Capturar, el inspector y exportar a HAR son gratis.{% else %}Available today. Capturing, the inspector and HAR export are free.{% endif %}</p>
+      <p>{% if es %}Capturar, el inspector y exportar a HAR son gratis; Pro cuesta USD {{ site.pro_price_usd_month }} al mes.{% else %}Capturing, the inspector and HAR export are free; Pro is USD {{ site.pro_price_usd_month }} a month.{% endif %}</p>
       {%- if site.stores.google_play != "" %}
       <a class="store" href="{{ site.stores.google_play }}" rel="noopener">Google Play</a>
       {%- else %}
@@ -18,7 +18,7 @@
     </li>
     <li class="card">
       <h3>iPhone y iPad</h3>
-      <p>{% if es %}Muy pronto, con una suscripción de USD {{ site.ios_price_usd_month }} al mes. El precio final en tu moneda lo fija App Store.{% else %}Coming soon, with a USD {{ site.ios_price_usd_month }} monthly subscription. The App Store sets the final price in your currency.{% endif %}</p>
+      <p>{% if es %}La misma suscripción de USD {{ site.pro_price_usd_month }} al mes. El precio final en tu moneda lo fija App Store.{% else %}The same USD {{ site.pro_price_usd_month }} monthly subscription. The App Store sets the final price in your currency.{% endif %}</p>
       {%- if site.stores.app_store != "" %}
       <a class="store" href="{{ site.stores.app_store }}" rel="noopener">App Store</a>
       {%- else %}

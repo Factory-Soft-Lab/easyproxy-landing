@@ -10,9 +10,7 @@ description: "Condiciones de uso de %APP%, la herramienta para inspeccionar el t
 {%- assign pro = site.app.pro -%}
 {%- assign co = site.company -%}
 {%- assign free = site.data.free_tier -%}
-{%- assign quarterly = site.data.plans[0] -%}
-{%- assign yearly = site.data.plans[1] -%}
-{%- assign lifetime = site.data.plans[2] -%}
+{%- assign monthly = site.data.plans[0] -%}
   <div class="wrap doc">
 
     <span class="eyebrow">Documento legal <span class="code">· EULA</span></span>
@@ -192,27 +190,25 @@ description: "Condiciones de uso de %APP%, la herramienta para inspeccionar el t
     <section id="prueba">
       <h2>9. Prueba gratis</h2>
       <p>
-        Las suscripciones {{ quarterly.es.name | downcase }} y {{ yearly.es.name | downcase }}
-        pueden empezar con <strong>{{ quarterly.trial_days }} días de prueba gratis</strong>,
+        La suscripción {{ monthly.es.name | downcase }}
+        puede empezar con <strong>{{ monthly.trial_days }} días de prueba gratis</strong>,
         si la tienda te la ofrece. La app te dice antes de confirmar si tienes prueba y
         cuándo termina.
       </p>
       <ul>
         <li>La prueba es <strong>una por cuenta de tienda</strong> y la decide Apple o Google: si ya la usaste, o ya estuviste suscrito, puede no aparecer.</li>
-        <li><strong>Al terminar la prueba, la suscripción pasa a pago automáticamente</strong> por el plan que elegiste, salvo que la canceles antes. En el App Store hay que cancelarla al menos 24 horas antes de que acabe la prueba.</li>
-        <li>Si cancelas durante la prueba, conservas Pro hasta el final de los {{ quarterly.trial_days }} días y no se te cobra nada.</li>
-        <li>Si durante la prueba compras otro plan —por ejemplo, {{ lifetime.es.name | downcase }}—, lo que quedaba de prueba se pierde.</li>
+        <li><strong>Al terminar la prueba, la suscripción pasa a pago automáticamente</strong> por el plan mensual, salvo que la canceles antes. En el App Store hay que cancelarla al menos 24 horas antes de que acabe la prueba.</li>
+        <li>Si cancelas durante la prueba, conservas Pro hasta el final de los {{ monthly.trial_days }} días y no se te cobra nada.</li>
       </ul>
     </section>
 
     <section id="renovacion">
       <h2>10. Renovación y cancelación</h2>
       <p>
-        Las modalidades {{ quarterly.es.name | downcase }} ({{ quarterly.es.period | downcase }})
-        y {{ yearly.es.name | downcase }} ({{ yearly.es.period | downcase }}) son
-        <strong>suscripciones de renovación automática</strong>: al acabar cada periodo se
-        renuevan solas por el mismo plazo y al precio vigente, salvo que las canceles.
-        La modalidad {{ lifetime.es.name | downcase }} es un pago único y no se renueva.
+        Pro es una sola modalidad, {{ monthly.es.name | downcase }} de USD {{ monthly.price_usd }}
+        (el precio final en tu moneda lo fija la tienda), y es una
+        <strong>suscripción de renovación automática</strong>: al acabar cada mes se
+        renueva sola por otro mes y al precio vigente, salvo que la canceles.
       </p>
       <ul>
         <li><strong>App Store:</strong> el pago se carga a tu cuenta de Apple al confirmar. La suscripción se renueva salvo que desactives la renovación automática al menos 24 horas antes de que termine el periodo en curso, y la renovación se cobra dentro de las 24 horas previas a ese final. La gestionas y cancelas en <em>Ajustes → tu nombre → Suscripciones</em>.</li>
